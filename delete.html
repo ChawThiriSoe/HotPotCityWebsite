@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order</title>
+</head>
+<body>
+<script type="text/javascript">
+	function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+var id = getUrlVars()["id"];
+document.write(id);
+
+var re = localStorage.getItem("cart");
+var mo = JSON.parse(re);
+var arraylength=mo.length;
+document.write(arraylength);
+var Mul= new Array ();
+var k=0;
+for(var i=0;i<arraylength;i++)
+{
+	if(mo[i][0]!=id)
+	{
+		Mul[k]=new Array(5);	
+		for(var j=0;j<5;j++)
+	{
+		Mul[k][j]=mo[i][j];
+	}
+	k++;
+	}
+	
+
+}
+localStorage.removeItem("cart");
+localStorage.setItem("cart", JSON.stringify(Mul));
+location.replace("order.html");
+</script>
+</body>
+</html>

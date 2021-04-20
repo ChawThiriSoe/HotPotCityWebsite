@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order</title>
+</head>
+<body>
+<script type="text/javascript">
+	function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+var id = getUrlVars()["id"];
+var name = getUrlVars()["name"];
+var price = getUrlVars()["prize"];
+var qty = getUrlVars()["qty"];
+document.write(id);
+document.write(name);
+document.write(price);
+document.write(qty);
+
+if(localStorage.getItem("cart")===null)
+{
+var listitem = new Array();
+listitem[0]=new Array(5);
+listitem[0][0]=id;
+listitem[0][1]=name;
+listitem[0][2]=price;
+listitem[0][3]=qty;
+listitem[0][4]=qty*price;
+localStorage.setItem("cart", JSON.stringify(listitem));
+document.write("Add Successfully");
+}
+else
+{
+var re = localStorage.getItem("cart");
+var mo = JSON.parse(re);
+var arraylength=mo.length;
+document.write(arraylength);
+var Mul= new Array ();
+for(var i=0;i<arraylength;i++)
+{
+	Mul[i]=new Array(5);
+	for(var j=0;j<5;j++)
+	{
+		Mul[i][j]=mo[i][j];
+	}
+}
+Mul[arraylength]=new Array(5);
+Mul[arraylength][0]=id;
+Mul[arraylength][1]=name;
+Mul[arraylength][2]=price;
+Mul[arraylength][3]=qty;
+Mul[arraylength][4]=qty*price;
+localStorage.removeItem("cart");
+localStorage.setItem("cart", JSON.stringify(Mul));
+}
+</script>
+<script>
+	window.history.go(-1);
+</script>
+</body>
+</html>

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HotPot City</title>
+	<link rel="ico" type="image/ico" href="images/logo.jpg">
+
+	<!-- Essential Script and Link -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- Essential Scrip and link -->
+
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<!-- Style -->
+
+	<!-- icon link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- icon link -->
+
+	<!-- NAV bar -->
+	<link rel="stylesheet" type="text/css" href="CSS/navbar.css">
+	<!-- NAV bar -->
+
+	<!-- quick link -->
+	<link rel="stylesheet" type="text/css" href="CSS/quicklink.css">
+	<!-- quick link -->
+
+	<!-- date -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="CSS/datePicker.css">
+	<script type="text/javascript" src="JS/events.js"></script>
+	<script type="text/javascript" src="JS/calendar.js"></script>
+	<script type="text/javascript" src="JS/datePicker.js"></script>
+	<!-- date -->
+
+	<script type="text/javascript">
+
+		function validate(){
+		var x=document.myform.email.value;
+		var ph=document.myform.phone.value;
+		var name=document.myform.name.value;
+		var status=false;  
+		var atposition=x.indexOf("@");  
+		var dotposition=x.lastIndexOf(".");
+
+
+		if(name.length<1){  
+		document.getElementById("nameerr").innerHTML="Please enter your name!!";  
+		status=false;  
+		}
+		else if(!isNaN(name))
+		{
+		document.getElementById("nameerr").innerHTML="Name must be character!!";  
+		status=false;  			
+		}
+		else{
+			status=true;
+		}
+
+
+		if(x.length==0)
+		{
+			 document.getElementById("emailerr").innerHTML="Email must be required!!";
+		  status=false;
+		}
+		else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+		  document.getElementById("emailerr").innerHTML="Email format is invalid!!";
+		  status=false;
+		}else{
+		status=true;  
+		  }
+
+
+		if(ph.length==0)
+		{
+			 document.getElementById("phoneerr").innerHTML="Phone number must be required!!";
+		  status=false;
+		}
+
+		else if(ph.length<6 || ph.length>11)
+		{
+			 document.getElementById("phoneerr").innerHTML="Password must be at least 11 number long!!";
+		  status=false;
+		}
+
+		else{
+		  status=true; 
+		  }
+		  return status;  
+		}
+	</script>
+
+</head>
+<body>
+	<!-- start of header -->
+	<div class="container-fluid">
+		<!-- Header -->
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-5">
+				<a href="index.html">
+					<img src="images/logo1.jpg" width="80px" height="80px" class="logo">
+				</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="www.faccebook.com">
+					<i class="fa fa-facebook social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.twitter.com">
+					<i class="fa fa-twitter social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.instagram.com">
+					<i class="fa fa-instagram social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.google.com">
+					<i class="fa fa-google social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.youtube.com">
+					<i class="fa fa-youtube social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-4">
+				<div class="input-group" style="padding-top: 25px;">
+                	<input class="form-control border-info py-2" type="search" placeholder="Search">
+                	<div class="input-group-append">
+                    	<button class="btn btn-outline-info" type="button">
+                        	<i class="fa fa-search"></i>
+                    	</button>
+                	</div>
+            	</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<!-- Header -->
+
+		<!-- NAV -->
+		<div class="row">
+			<div class="col-md-12">
+				<nav>
+        			<ul>
+            			<li><a href="index.html">Home</a></li>
+            			<li><a href="service.html">Service</a>
+            				<ul>
+                				<li><a href="reservation.html">Reservation</a></li>
+                				<li><a href="order.html">Order</a></li>
+            				</ul>        
+            			</li>
+            			<li><a href="chef.html">Chef</a>
+            			<li><a href="menu.html">Menu</a>
+            				<ul>
+                				<li><a href="soup.html">Soup</a></li>
+                				<li><a href="seafood.html">Seafood</a></li>
+                				<li><a href="meat.html">Meat</a></li>
+								<li><a href="vegetable.html">Vegetable</a></li>
+								<li><a href="grill.html">Grill</a></li>
+								<li><a href="sauce.html">Sauce</a></li>
+								<li><a href="ramen.html">Ramen</a></li>
+								<li><a href="drink.html">Drink</a></li>
+            				</ul>
+            			</li>
+            			<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="promotion.html">Promotion</a>
+							<ul>
+								<li><a href="today.html">Today Special</a></li>
+								<li><a href="event.html">Special Event</a></li>
+								<li><a href="discount.html">Special Discount</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+       				 </ul>
+    			</nav>
+			</div>
+		</div>
+		<!-- NAV -->
+
+	</div>
+	<!-- end of header -->
+
+
+	<!-- start of body -->
+	<div class="container-fluid" style="padding-bottom: 30px;">
+		<form name="myform" action="" onsubmit="return validate()" method="post">
+			<div class="row" style="padding-top: 20px;">
+				<div class="col-md-12">
+					<center>
+						<h2>
+							Reservation Form
+						</h2>
+					</center>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8" style="border: 1px solid black;">
+					<div class="row" style="padding: 20px;">
+						<div class="col-md-6">
+							<h4>
+								Name
+							</h4>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control text" id="name">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<span id="nameerr" style="color:red; padding-left: 100px;"></span>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 20px;">
+						<div class="col-md-6">
+							<h4>
+								Phone
+							</h4>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control text" id="phone">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<span id="phoneerr" style="color:red; padding-left: 100px;"></span>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 20px;">
+						<div class="col-md-6">
+							<h4>
+								Email
+							</h4>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="type" class="form-control text" id="email">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<span id="emailerr" style="color:red; padding-left: 100px;"></span>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 20px;">
+						<div class="col-md-6">
+							<h4>
+								Name of Restaurant
+							</h4>
+						</div>
+						<div class="col-md-6">
+							 <div class="form-group">
+								<select class="form-control text" id="sel1">
+									<option>Restaurant</option>
+									<option>Hot Pot City Ahlone</option>
+								    <option>Hot Pot City 8 Mile</option>
+								    <option>AKA Myanmar</option>
+								    <option>The Loft House</option>
+								</select>
+							</div> 
+						</div>
+					</div>
+					<div class="row" style="padding: 20px;">
+						<div class="col-md-6">
+							<h4>
+								Number of People
+							</h4>
+						</div>
+						<div class="col-md-6">
+							 <div class="form-group">
+								<select class="form-control text" id="sel2">
+									<option>Number</option>
+									<option>1</option>
+								    <option>2</option>
+								    <option>3</option>
+								    <option>4</option>
+								    <option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>More</option>
+								</select>
+							</div> 
+						</div>
+					</div>
+					<div class="row" style="padding: 20px;">
+						<div class="col-md-6">
+							<h4>
+								Date & Time
+							</h4>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+	  							<input class="date date-1 form-control text" value="" data-from="theFlight" placeholder="YYYY-MM-DD HH:MM APM" data-timeformat="HH:MM PM" />
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 20px;">
+						<div class="col-md-6">
+							<h4>
+								Room or Table
+							</h4>
+						</div>
+						<div class="col-md-3">
+							 <div class="form-check text">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="room" value="VVIP Room"> VVIP Room
+								</label>
+							</div>
+							<div class="form-check text">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="room" value="VIP Room"> VIP Room
+								</label>
+							</div>
+							<div class="form-check text">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="room" value="Private Room"> Private Room
+								</label>
+							</div>
+						</div>
+						<div class="col-md-3">
+							 <div class="form-check text">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="room" value="Single Table"> Single Table
+								</label>
+							</div>
+							<div class="form-check text">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="room" value="Couple Table"> Couple Table
+								</label>
+							</div>
+							<div class="form-check text">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="room" value="Family table"> Family table
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 20px;">
+						<div class="col-md-6">
+							<h4>
+								Number of Room or Table
+							</h4>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<select class="form-control text" id="sel3">
+									<option>Number</option>
+									<option>1</option>
+								    <option>2</option>
+								    <option>3</option>
+								    <option>4</option>
+								    <option>5</option>
+									<option>More</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+			<div class="row" style="padding-top: 20px;">
+				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					<center>
+						<button class="btn aa btn-block" type="submit">Reserve Now</button>
+					</center>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-2">
+					<center>
+						<button class="btn aa btn-block" type="reset">Cancel</button>
+					</center>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</form>
+	</div>
+	<!-- end of body -->
+
+
+	<!-- start of footer -->
+	<div class="container-fluid" style="background-color: gray;">
+		<div class="row" style="padding-top: 30px;">
+			<div class="col-md-2"></div>
+			<div class="col-md-1">
+				<a href="index.html">
+					<img src="images/logo1.jpg" width="80px" height="80px" class="logo">
+				</a>
+			</div>
+			<div class="col-md-5"></div>
+			<div class="col-md-2">
+				<a href="www.faccebook.com">
+					<i class="fa fa-facebook social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.twitter.com">
+					<i class="fa fa-twitter social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.instagram.com">
+					<i class="fa fa-instagram social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.google.com">
+					<i class="fa fa-google social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.youtube.com">
+					<i class="fa fa-youtube social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-1">
+				<div class="bucket">
+					<ul class="link-list">
+						<li class="link-list__item">
+							<a href="index.html"><font class="text">Home</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="service.html"><font class="text">Service</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="chef.html"><font class="text">Chef</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="menu.html"><font class="text">Menu</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="gallery.html"><font class="text">Gallery</font></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="bucket">
+					<ul class="link-list">
+						<li class="link-list__item" style="padding-top: 20px;">
+							<a href="promotion.html"><font class="text">Promotion</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="about.html"><font class="text">About Us</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="contact.html"><font class="text">Contact Us</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="faq.html"><font class="text">FAQ</font></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2" style="padding-top: 30px;">
+				<font class="text">Your Email Address:</font>
+				<br><br><br>
+				<font class="text">Your Feedback:</font>
+			</div>
+			<div class="col-md-3" style="padding-top: 30px;">
+				<div class="form-group">
+						  <input type="email" class="form-control text" id="usr" placeholder="Email">
+				</div>
+				<br>
+				<div class="form-group">
+					<textarea class="form-control text" rows="5" id="comment" placeholder="Give feedback to us"></textarea>
+				</div> 
+				<button class="btn btn-primary">Send</button>
+			</div>
+			<div class="col-md-3">
+				<center>
+					<div class="bucket">
+					<ul class="link-list">
+						<li class="link-list__item">
+							<a href="login.html"><font class="text" style="font-size: 20px;">Login & Register</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="term.html"><font class="text" style="font-size: 20px;">Term & Condition</font></a>
+						</li>
+					</ul>
+				</div>
+				</center>
+			</div>
+		</div>
+		<div class="row" style="padding-top: 20px;">
+			<div class="col-md-2"></div>
+			<div class="col-md-3">
+				<font class="text">Our Contact:</font>
+				<br><br>
+				<font class="text">Our Email:</font>
+				<br><br>
+				<font class="text">Our Main Restaurant's Location:</font>
+			</div>
+			<div class="col-md-7">
+				<font class="text">0978088866, 09780888877</font>
+				<br><br>
+				<font class="text">www.hotpotsity@gmail.com</font>
+				<br><br>
+				<font class="text">No(71/A),Corner of Thit Taw street and Min Ye' Kyaw Swar street, Ahlone Township, Yangon</font>
+			</div>
+		</div>
+		<div class="row" style="padding-top: 20px;">
+			<div class="col-md-12">
+				<center class="text">Designed and Maintained By Chaw Thiri Soe, Info Tech Software House</center>
+			</div>
+		</div>
+	</div>
+	<!-- start of footer -->
+
+
+<!-- date -->
+
+<script type="text/javascript">
+	'use strict';
+
+	// used in demos later on to merge default options with demo options...
+	function extend(a, b) { // extend a with properties of b not in a; simple version
+		for(var key in b) {
+			if(!a.hasOwnProperty(key)) {
+				a[key] = b[key];
+			}
+		}
+		return a;
+	}
+
+	/**
+	 * returns a string used in <input> fields to mark the min date
+	 * for one of the range demos...
+	 * 
+	 * @return {String} String of date in format 'YYYY-MM-DD'
+	 */
+	var getTodayString = function() {
+			var today = new Date();
+
+			return today.getFullYear() + '-' +
+				((today.getMonth() + 1) + '').replace(/^(\d)$/, '0$1') + '-' +
+				(today.getDate() + '').replace(/^(\d)$/, '0$1');
+		};
+
+		/**
+		 * The following options are for demos from datePicker
+		 * these options render events, today icon and icons for
+		 * the amount of events per day (excl 'disabled'), etc.
+		 * Will be used in all other examples as well (extendet).
+		 */
+	var options = {
+			weekDays: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+			months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+				'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+
+			sundayBased: false,
+			renderWeekNo: true,
+			equalHight: true,
+			events: events, // external data... see events.js
+
+			template: {
+				row: '<td class=""><span class=""{{event}} data-day=\'{"day":"{{day}}", "month":"{{month}}", "year":"{{year}}"}\'>{{day-event}}{{today}}</span></td>',
+				/**
+				 * rendering events, replacing {{event}} in template.row
+				 */
+				event: function(day, date, event) {
+					var text = [],
+						uuids = [],
+						someExtra = '';
+
+					for (var n = 0, m = event.length; n < m; n++) {
+						event[n].text && text.push('- ' + event[n].text);
+
+						uuids.push(event[n]._id);
+
+						if (event[n].extra) { // extend functionality...
+							someExtra = event[n].extra;
+						}
+					}
+					text = text.join("\n");
+
+					return text ? ' title="' + text + '"' +
+						' data-uuids=\'[' + uuids.join(', ') + ']\'' +
+						(someExtra ? ' data-name="' + someExtra + '"' : '') : '';
+				},
+				/**
+				 * rendering today; just for fun..., replacing {{today}} in template.row
+				 */
+				today: function(day, date) {
+					return '<span class="today-icon">+</span>';
+				},
+				/**
+				 * rendering every day, replacing {{day-event}} in template.row
+				 */
+				day: function(day, date, event) {
+					var length = event.length;
+
+					for (var n = length; n--; ) { // check if it's only a 'disabled' event
+						if (event[n].type && event[n].type === 'disabled') { // or event[n].disabled
+							length--;
+						}
+					}
+					if (length > 1) {
+						return day + '<span class="count-icon">' + length + '</span>';
+					}
+				}
+			},
+			/**
+			 * Some testings for input with no value but it should be time only picker...
+			 * @param  {[type]} element [description]
+			 * @return {String}         The value of the input field
+			 */
+			readValue: function(element) {
+				if (!element.value && element.getAttribute('data-type') === 'time') { // initial time if empty
+					return new Date().toTimeString().split(' ')[0]; // triggers default behavior
+				}
+
+				return element.value; // triggers default behavior
+			}
+		},
+		/**
+		 * Can be used in options.renderCallback;
+		 * Call like: funcName.call(this, container, element, toggled);
+		 * Adds a class name options.rangeClass or 'range' to days in calender that define a range
+		 * 
+		 * @param  {Element} container The datePicker container
+		 * @param  {Element} element   The current input field (or other trigger element)
+		 * @param  {Boolean} toggled   Toggle indicator of datePicker (see API docu)
+		 */
+		markRangeDays = function(container, element, toggled) {
+			var calOptions = this.calendar.options,
+				value_1 = +this.currentInput.value.split(' ')[0].replace(/-/g, ''),
+				value_2 = this.currentPartner &&
+					+this.currentPartner.value.split(' ')[0].replace(/-/g, ''),
+				dates = container.querySelectorAll( // get all displayed days
+					'.' + calOptions.prevMonthClass + ', ' +
+					'.' + calOptions.nextMonthClass + ', ' +
+					'.' + calOptions.currentMonthClass),
+				data = '';
+
+			if (this.isOpen && toggled !== undefined && value_2)  {
+				for (var n = 0, m = dates.length; n < m; n++) {
+					if (data = dates[n].getAttribute(this.options.pickerAttribute)) {
+						data = +data.replace(/-(\d)(?=(?:-|$))/g, '0$1').replace(/-/g, '');
+						if (value_1 && value_2 && value_1 !== value_2 && (
+								(value_1 <= data && value_2 >= data) ||
+								(value_1 >= data && value_2 <= data))) {
+							dates[n].className += ' ' + (this.options.rangeClass || 'range') +
+							(value_1 === data || value_2 === data ? ' range-' +
+								(value_1 >= data && value_2 >= data? 'begin' : 'end') : '');
+						}
+					}
+				}
+			}
+		},
+		/**
+		 * Can be used in options.renderCallback;
+		 * Call like: funcName.call(this, container, element, toggled);
+		 * Renders 3 buttons to the end of datePicker with event listener for
+		 * clearing the input, jumping to today and for closing the date picker.
+		 * Adds 'disabled' attribute in case they can't be used (hide in CSS).
+		 * Uses options.clearText, options.todayText and options.closeText (optional).
+		 * Today button has an attribute data-picker="", so it works like day in calender
+		 * where click event is picked up internaly.
+		 * 
+		 * @param  {[type]} container [description]
+		 * @param  {[type]} element   [description]
+		 * @param  {[type]} toggled   [description]
+		 * @return {[type]}           [description]
+		 */
+		addButtons = function(container, element, toggled) {
+			var _today = new Date(),
+				today = _today.getFullYear() + '-' + (_today.getMonth() + 1) + '-' + _today.getDate(),
+				date = this.date.year + '-' + +this.date.month + '-' + +this.date.day,
+				isFrom = element.hasAttribute(this.options.rangeStartAttribute),
+				isRange = this.currentPartner,
+				value_2 = isRange && +this.currentPartner.value.split(' ')[0].replace(/-/g, ''),
+				minDate = +(element.getAttribute(this.options.minDateAttribute) || this.options.minDate).replace(/-/g, ''),
+				maxDate = +(element.getAttribute(this.options.maxDateAttribute) || this.options.maxDate).replace(/-/g, ''),
+				_today = +today.replace(/-(\d)(?=(?:-|$))/g, '0$1').replace(/-/g, ''),
+				todayPossible = (today !== date || !element.value) && minDate <= _today && _today <= maxDate && (
+					isRange ? (isFrom ? !value_2 || value_2 >= _today : !value_2 || value_2 <= _today) : true);
+
+			this.isOpen && toggled !== undefined && container.insertAdjacentHTML('beforeend', // render buttons...
+				'<div class="dp-footer">' +
+					'<button class="action clear"' + (this.currentInput.value ? '' : ' disabled') +
+						' type="button">' + (this.options.clearText || 'clear') + '</button>' +
+					'<button class="action today"' + (todayPossible ? '' : ' disabled') +
+						' data-picker="' + today + '" type="button">' + (this.options.todayText || 'today') + '</button>' +
+					'<button class="action close" type="button">' + (this.options.closeText || 'close') + '</button>' +
+				'</div>');
+
+			this._hasListeners = this._hasListeners || (function(_this) { // ...and add event listeners (once)
+				container.addEventListener('click', function(e) {
+					var target = e.target,
+						className = target.className;
+
+					if (/action/.test(className)) {
+						if (/close/.test(className)) {
+							_this.toggle();
+						} else if (/clear/.test(className)) {
+							_this.currentInput.value = '';
+							_this.toggle(true);
+						} 
+					}
+				});
+
+				return true; // make this._hasListeners true for next call of renderCallback
+			})(this);
+		};
+
+
+
+
+	// ------------------- DEMO for input.date-1 ------------------ //
+	// Regular example that enables all kinds of different formats
+	// and ranges and demonstrates the default possibilities of
+	// datePicker... (except extra features defined in default options)
+	// ------------------------------------------------------------ //
+	window.myDatePicker_1 = new DatePicker('.date-1', options);
+		
+
+	// ------------------- DEMO for input.date-11 ----------------- //
+	// Example with marked range days.
+	// ------------------------------------------------------------ //
+	// first set input fields to a minimum date
+	[].map.call(document.querySelectorAll('.date-11'), function(elm, a) {
+		elm.setAttribute('data-mindate', getTodayString());
+	});
+
+	window.myDatePicker_11 = new DatePicker('.date-11', extend({
+		closeOnSelect: false,
+		renderCallback: function(container, element, toggled) {
+			markRangeDays.call(this, container, element, toggled);
+			addButtons.call(this, container, element, toggled);
+
+			return true; // triggers default behaviour
+		}
+	}, options));
+
+
+	// ------------------- DEMO for input.date-111 ----------------- //
+	// Example with different month / year selector (tables).
+	// This is a bit more complex as we need to render years, months,
+	// to install event listeners and to deal with min/max values...
+	// ------------------------------------------------------------ //
+	var hasClass = function(element, className) {
+			return (' ' + element.className + ' ').indexOf(' ' + className + ' ') !== -1;
+		},
+		renderMonthsYears = function(monthYear, _this) {
+			var isMonth = monthYear === 'dp-label-month',
+				year = _this.tempYear - 4, // makes current the 5th in the table
+				month = 1,
+				getData = function(n, isMonth) {
+					var data = isMonth ? month++ : year++;
+
+					if (isMonth) {
+						data = +_this.date.year >= +_this.maxDate.year && data > +_this.maxDate.month ? '' :
+							+_this.date.year <= +_this.minDate.year && data < +_this.minDate.month ? '' : data;
+					} else {
+						if (!_this.hasMaxYear && data >= _this.maxDate.year) {
+							_this.hasMaxYear = true;
+						}
+						if (!_this.hasMinYear && data <= _this.minDate.year) {
+							_this.hasMinYear = true;
+						}
+						data = data <= _this.maxDate.year && data >= _this.minDate.year ? data : '';
+					}
+
+					return isMonth ? data === '' ? data : _this.options.months[data - 1] : data;
+				},
+				dataHTML = (function() {
+					var html = [];
+
+					_this.hasMinYear = _this.hasMaxYear = false;
+
+					for (var n = 0, m = 4; n < m; n++) {
+						for (var x = 0, y = 3; x < y; x++) {
+							html.push(_this.options.dataHTML.
+								replace(/class="(.*?)"/, function($1, $2) {
+									return 'class="' + $2 + (
+										isMonth && month === +_this.date.month ? ' current this-month' :
+										!isMonth && year === +_this.date.year ? ' current this-year' : '') + '"';
+								}).
+								replace('{{data}}', getData(n * y + x, isMonth)).
+								replace('{{day}}', +_this.date.day).
+								replace('{{month}}', isMonth ? month - 1 : +_this.date.month).
+								replace('{{year}}', isMonth ? _this.date.year : year - 1 ));
+						}
+						html.push(_this.options.glueHTML);
+					}
+					html.pop(); // remove last <tr>
+
+					return html.join('');
+				}());
+
+			return _this.options.header.
+				replace('{{month}}', _this.options.months[_this.date.month - 1]).
+				replace('{{year}}', _this.date.year) +
+				_this.options.yearsMonthsHTML.replace('{{data}}', dataHTML);
+		};
+
+	window.myDatePicker_111 = new DatePicker('.date-111', extend({
+		// closeOnSelect: false,
+		autoFallback: false, // shows months after clicking on year
+		header: // HTML without selects...
+			'<div class="dp-title">' +
+				'<button class="dp-prev" type="button"{{disable-prev}}>{{prev}}</button>' +
+				'<button class="dp-next" type="button"{{disable-next}}>{{next}}</button>' +
+				'<div class="dp-label dp-label-month">{{month}}</div>' +
+				'<div class="dp-label dp-label-year">{{year}}</div>' +
+			'</div>',
+		yearsMonthsHTML: '<table class="cal-month month-year-picker"><tbody><tr>{{data}}</tr></tbody></table>',
+		dataHTML: '<td class="selector" data-year="{{year}}" data-month="{{month}}">{{data}}</td>',
+		glueHTML: '</tr><tr>',
+		renderCallback: function(container, element, toggled) {
+			this.isInitialized = this.isInitialized || (function(_this) { // only once
+				container.addEventListener('click', function(e) {
+					var test = e.target.className.match(/dp-label-(?:month|year)/),
+						prev = hasClass(e.target, _this.options.prevButtonClass),
+						next = prev ? false : hasClass(e.target, _this.options.nextButtonClass),
+						month = 0;
+
+					if (test) { // clicked on month or year label
+						_this.showsYears = test[0] === 'dp-label-year';
+						_this.tempMonth = _this.date.month;
+						_this.tempYear = _this.date.year;
+						container.innerHTML = renderMonthsYears(test[0], _this);
+					} else if (_this.showsYears && (prev || next)) { // clicked on arrows (prev | next)
+						_this.tempYear = +_this.tempYear + 
+							(prev ? -Math.min(+_this.tempYear - +_this.minDate.year, 12) :
+								Math.min(+_this.maxDate.year - +_this.tempYear, 12)) + '';
+
+						month = +_this.tempMonth;
+						_this.date.month = ((
+							+_this.tempYear >= +_this.maxDate.year ? Math.min(+_this.maxDate.month, month) :
+							+_this.tempYear <= +_this.minDate.year ? Math.max(+_this.minDate.month, month) :
+							month) + '').replace(/^(\d)$/, '0$1');
+
+						container.innerHTML = renderMonthsYears('', _this);
+					} else { // something else was clicked
+						if (hasClass(e.target, 'selector') && e.target.innerHTML) {
+							if (_this.showsYears) {
+								_this.date.year = e.target.getAttribute('data-year') + '';
+								if (_this.options.autoFallback) {
+									container.innerHTML = renderMonthsYears('dp-label-month', _this);
+								} else {
+									_this.toggle(_this.date);
+								}
+							} else {
+								_this.date.month = (e.target.getAttribute('data-month') + '').replace(/^(\d)$/, '0$1');
+								_this.toggle(_this.date);
+							}
+						}
+						_this.showsYears = false; // revisit
+					}
+					// disable arrows
+					if ((_this.showsYears && _this.hasMaxYear) || (test && !_this.showsYears)) {
+						container.querySelector('.dp-next').disabled = true;
+					}
+					if (_this.showsYears && _this.hasMinYear || (test && !_this.showsYears)) {
+						container.querySelector('.dp-prev').disabled = true;
+					}
+				}, false);
+
+				return true;
+			})(this);
+
+			if (toggled && !this.isOpen) { // on close ... TODO: on input change
+				this.showsYears = false;
+			}
+
+			return true; // triggers default behaviour
+		}
+	}, options));
+
+
+	// ------------------- DEMO for input.date-2 ------------------ //
+	// Example for hidden input field triggered by a button and
+	// rendering a formatted value to a disabled input field.
+	// ------------------------------------------------------------ //
+	var getInput = function(element, hidden) {
+			return element.parentNode.querySelector('input' + (hidden ? '[type="hidden"]' : ''));
+		},
+		changeValueFormat = function(value) { // some dummy function...
+			var date = new Date(value + 'T00:00:00.000Z');
+			return date.toDateString();
+		};
+
+	window.myDatePicker_2 = new DatePicker('.date-2', extend({
+		/**
+		 * Initially render all values in input fields useing converted
+		 * values from hidden input fields.
+		 * 
+		 * @param  {ElementList} elements All elements datePicker is initialized to
+		 */
+		initCallback: function(elements) {
+			var input,
+				hiddenInput;
+
+			for (var n = elements.length; n--; ) {
+				input = getInput(elements[n]);
+				hiddenInput = getInput(elements[n], true);
+
+				input.value = changeValueFormat(hiddenInput.value);
+			}
+		},
+		renderCallback: function(container, element, toggled) {
+			return getInput(element); // triggers default behaviour on certain element
+		},
+		renderValue: function(container, element, value) {
+			getInput(element).value = changeValueFormat(value);
+			return getInput(element, true); // triggers default behaviour on certain element
+		},
+		readValue: function(element) {
+			var value = getInput(element, true).value;
+
+			getInput(element).value = changeValueFormat(value);
+			return value;
+		}
+	}, options));
+
+
+	// ------------------- DEMO for input.date-3 ------------------ //
+	// Example like the above but then year, month and day get
+	// rendered in seperate fields.
+	// ------------------------------------------------------------ //
+	var getInputs = function(element, hidden) {
+			return element.parentNode.querySelectorAll('input');
+		};
+
+	window.myDatePicker_3 = new DatePicker('.date-3', extend({
+		renderCallback: function(container, element, toggled) {
+			return getInputs(element)[0];
+		},
+		renderValue: function(container, element, value) {
+			var inputs = getInputs(element),
+				val = value.split('-');
+
+			inputs[3].value = value;
+			inputs[0].value = val[0];
+			inputs[1].value = val[1]; // this.options.months[+val[1] - 1];
+			inputs[2].value = val[2];
+		},
+		readValue: function(element) {
+			var value = getInputs(element)[3].value;
+
+			this.options.renderValue.call(this, undefined, element, value);
+			return value;
+		}
+	}, options));
+
+
+	// ------------------- DEMO for input.date-4 ------------------ //
+	// Example with data from variables.
+	// ------------------------------------------------------------ //
+	var dates = window.dates = {
+			'date-1': '2016-06-23',
+			'date-2': '2016-07-26',
+			'date-3': '2016-08-28'
+		},
+		dataAttr = 'data-date',
+		changeValueFormat_de = function(value, options) {
+			var parts = value.split(' ')[0].split('-'),
+				date = new Date(parts[0], parts[1] - 1, parts[2] || 0);
+
+			return options.weekDaysLong[date.getDay()] + ', ' + date.getDate() + '. ' +
+				options.months[date.getMonth()] + ' ' + date.getFullYear();
+		};
+
+	window.myDatePicker_4 = new DatePicker('.date-4', extend({
+		weekDaysLong:
+			['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+		initCallback: function(elements) {
+			for (var n = elements.length; n--; ) {
+				elements[n].value =
+					changeValueFormat_de(dates[elements[n].getAttribute(dataAttr)], this.options);
+			}
+		},
+		renderValue: function(container, element, value) {
+			dates[element.getAttribute(dataAttr)] = value;
+			element.value = changeValueFormat_de(value, this.options);
+		},
+		readValue: function(element) {
+			return dates[element.getAttribute(dataAttr)];
+		}
+	}, options));
+
+
+	// ------------------- DEMO for input.date-5 ------------------ //
+	// Example with less markup.
+	// ------------------------------------------------------------ //
+	window.myDatePicker_5 = new DatePicker('.date-5', extend({
+		renderWeekNo: false,
+		equalHight: false,
+		datePickerClass: 'date-picker div-based',
+		template: {
+			start: function(month, year) { // rendering week days
+				return '{{days}}'
+			},
+			daysOfWeek: '<div class="item">{{day}}</div>',
+			colGlue: '',
+			row: '<div class="item{{day-event}}">{{day}}</div>',
+			end: function() {return ''},
+			day: function(days, date) {
+				if (date.getDay() === (this.options.sundayBased ? 0 : 1)) {
+					return ' cleared-day';
+				}
+				return ' ';
+			}
+		}
+	}, options));
+
+
+	// ------------------- DEMO for input.date-6 ------------------ //
+	// Example with today, clear and close button (stays open).
+	// ------------------------------------------------------------ //
+	window.myDatePicker_6 = new DatePicker('.date-6', extend({
+		renderWeekNo: true,
+		closeOnSelect: false,
+
+		clearText: '', // following are optional for different languages
+		todayText: '',
+		closeText: 'exit', // prints 'exit' in place of default 'close'
+
+		renderCallback: function(container, element, toggled) {
+			addButtons.call(this, container, element, toggled);
+
+			return true; // triggers default behaviour
+		}
+	}, options));
+</script>
+
+<!-- date -->
+</body>
+</html>

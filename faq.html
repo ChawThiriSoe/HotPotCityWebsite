@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HotPot City</title>
+	<link rel="ico" type="image/ico" href="images/logo.jpg">
+
+	<!-- Essential Script and Link -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- Essential Scrip and link -->
+
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<!-- Style -->
+
+	<!-- icon link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- icon link -->
+
+	<!-- NAV bar -->
+	<link rel="stylesheet" type="text/css" href="CSS/navbar.css">
+	<!-- NAV bar -->
+
+	<!-- quick link -->
+	<link rel="stylesheet" type="text/css" href="CSS/quicklink.css">
+	<!-- quick link -->
+
+	<!-- faq link -->
+	<link rel="stylesheet" type="text/css" href="CSS/faq.css">
+	<script type="text/javascript" src="JS/faq.js"></script>
+	<!-- faq link -->
+
+	<script type="text/javascript">
+
+		function validate(){
+		var x=document.myform.email.value;
+		var ph=document.myform.phone.value;
+		var name=document.myform.name.value;
+		var status=false;  
+		var atposition=x.indexOf("@");  
+		var dotposition=x.lastIndexOf(".");
+
+
+		if(name.length<1){  
+		document.getElementById("nameerr").innerHTML="Please enter your name!!";  
+		status=false;  
+		}
+		else if(!isNaN(name))
+		{
+		document.getElementById("nameerr").innerHTML="Name must be character!!";  
+		status=false;  			
+		}
+		else{
+			status=true;
+		}
+
+
+		if(x.length==0)
+		{
+			 document.getElementById("emailerr").innerHTML="Email must be required!!";
+		  status=false;
+		}
+		else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+		  document.getElementById("emailerr").innerHTML="Email format is invalid!!";
+		  status=false;
+		}else{
+		status=true;  
+		  }
+
+
+		if(ph.length==0)
+		{
+			 document.getElementById("phoneerr").innerHTML="Phone number must be required!!";
+		  status=false;
+		}
+
+		else if(ph.length<6 || ph.length>11)
+		{
+			 document.getElementById("phoneerr").innerHTML="Phone number must be at least 11 numbers!!";
+		  status=false;
+		}
+
+		else{
+		  status=true; 
+		  }
+		  return status;  
+		}
+	</script>
+
+
+</head>
+<body>
+	<!-- start of header -->
+	<div class="container-fluid">
+		<!-- Header -->
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-5">
+				<a href="index.html">
+					<img src="images/logo1.jpg" width="80px" height="80px" class="logo">
+				</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="www.faccebook.com">
+					<i class="fa fa-facebook social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.twitter.com">
+					<i class="fa fa-twitter social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.instagram.com">
+					<i class="fa fa-instagram social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.google.com">
+					<i class="fa fa-google social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.youtube.com">
+					<i class="fa fa-youtube social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-4">
+				<div class="input-group" style="padding-top: 25px;">
+                	<input class="form-control border-info py-2" type="search" placeholder="Search">
+                	<div class="input-group-append">
+                    	<button class="btn btn-outline-info" type="button">
+                        	<i class="fa fa-search"></i>
+                    	</button>
+                	</div>
+            	</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<!-- Header -->
+
+		<!-- NAV -->
+		<div class="row">
+			<div class="col-md-12">
+				<nav>
+        			<ul>
+            			<li><a href="index.html">Home</a></li>
+            			<li><a href="service.html">Service</a>
+            				<ul>
+                				<li><a href="reservation.html">Reservation</a></li>
+                				<li><a href="order.html">Order</a></li>
+            				</ul>        
+            			</li>
+            			<li><a href="chef.html">Chef</a>
+            			<li><a href="menu.html">Menu</a>
+            				<ul>
+                				<li><a href="soup.html">Soup</a></li>
+                				<li><a href="seafood.html">Seafood</a></li>
+                				<li><a href="meat.html">Meat</a></li>
+								<li><a href="vegetable.html">Vegetable</a></li>
+								<li><a href="grill.html">Grill</a></li>
+								<li><a href="sauce.html">Sauce</a></li>
+								<li><a href="ramen.html">Ramen</a></li>
+								<li><a href="drink.html">Drink</a></li>
+            				</ul>
+            			</li>
+            			<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="promotion.html">Promotion</a>
+							<ul>
+								<li><a href="today.html">Today Special</a></li>
+								<li><a href="event.html">Special Event</a></li>
+								<li><a href="discount.html">Special Discount</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+       				 </ul>
+    			</nav>
+			</div>
+		</div>
+		<!-- NAV -->
+
+	</div>
+	<!-- end of header -->
+
+
+	<!-- start of body -->
+		<div class="container">
+		<div class="row">
+			<div class="col-md-7 box-toggle">
+				<div class="contorol">
+					<h5>Should I make a table reservation?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						We strongly advise to book a table although it is not compulsory, especially on Week-ends which are more busy days. You can make the Reservation in our reservation page of our Website. <a href="reservation.html" style="color: orange;">Click here</a> to make the reservation.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>When is a good time to visit if I don't have a lot of time?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						It will be good time arriving early or dining late! Mostly, our restaurants may be the busiest time from 12:00PM - 2:00PM and 6:00PM - 8:00PM on weekdays. Weekends may be busy all day.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>Do you have takeout? Delivery?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						Almost our entire menu is available for takeout. You may place your order in advance by calling the restaurant directly or by ordering at the Order page of our website. Of course, we offer the delivery to your place. <a href="order.html" style="color: orange;">Click here</a> to make Order or Delivery.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>Do you do anything special for guests celebrating a birthday?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						For birthday guests, we serve the special promotion. You can learn about that promtion in the Special Event Promotion page of our Webstie. <a href="event.html" style="color: orange;">Click here</a> to visit the page which is described some of the promotions.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>Is it Okay to bring babies and children?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						Absolutely! If you need a kids' menu, high chair or booster seat, please ask your host or server. We have changing tables for infants in both men's and women's restrooms (or in our family restrooms). We also offer Wikki Stix for children 3 years or older to enjoy.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>Do you have Wi-Fi?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						Of Course!! We offer the Wi-Fi in all our restaurants.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>Do you have a private parking?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						We don't have private parking, but you can park your car on the street next to our restaurants. You can be provided for your transfer or taxi which will get you directly in front of our restaurants.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>Can I bring my pet in?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						Sorry, the Pets are not allowed in our restaurants.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>Do you offer groups hosting?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						Sure!! You can book any of our Private room and host your group there!
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>How can I be certain my booking's been received?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						We'll send an instant confirmation email to the address used in your booking. If you book more than a day ahead, we'll also send a reminder 24 hours before your booking is due. You can reconfirm your booking using a link in your reminder email.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>What happens if I don't reconfirm my booking?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						Don't worry, your restaurant will still hold your booking without a reconfirmation.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>What happens if I'm running late?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						You have to call the restaurant. Every restaurant is different, but our restaurants will hold a booking for at least twenty minutes before reassigning your table.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>How do I cancel a booking?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						To help our restaurants manage their sittings we ask our diners to give at least 24 hours' notice of any cancellations. You can do this by calling your restaurant direct. If you need to cancel less than 24 hours before your dinner date, you can use the cancellation link within your reminder email (sent 24 hours before your reservation time). We also encourage our diners to follow this up with a call direct to the restaurant.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>How much do I have to pay for my booking?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						Absolutely nothing! All bookings made through our Websites are free to the consumer.
+					</p>
+				</div>
+				<div class="contorol">
+					<h5>Why do you need my email address?</h5>
+					<span class="toggle-info pull-left">
+						<i class="fa fa-plus"></i>
+					</span>
+				</div>
+				<div class="content-box">
+					<p>
+						All bookings are automatically confirmed via email. Without an address to send the confirmation to the booking, it can't be accepted. We'll also use your email address to send reminders for any bookings made more than 24 hours in advance of your dining date.
+					</p>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<form name="myform" action="" onsubmit="return validate()" method="post">
+				<div class="row" style="padding-top: 100px;">
+					<div class="col-md-12">
+						<center>
+							<h3>
+								Your Question
+							</h3>
+						</center>
+					</div>
+				</div>
+				<div class="row" style="padding-top: 20px;">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<font class="text">
+							Name:
+						</font>
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control text" id="name">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<span id="nameerr" style="color:red;"></span>
+						</div>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+				<div class="row" style="padding-top: 20px;">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<font class="text">
+							Email:
+						</font>
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="type" class="form-control text" id="email">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<span id="emailerr" style="color:red;"></span>
+						</div>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+				<div class="row" style="padding-top: 20px;">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<font class="text">
+							Phone:
+						</font>
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control text" id="phone">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<span id="phoneerr" style="color:red;"></span>
+							</div>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+				<div class="row" style="padding-top: 20px;">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<font class="text">
+							Enter your questions:
+						</font>
+					</div>
+					<div class="col-md-5">
+						<textarea class="form-control text" rows="5" cols="50" id="comment" placeholder="Please give us your Feedback"></textarea>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row" style="padding-bottom: 20px;">
+					<div class="col-md-8"></div>
+					<div class="col-md-2" style="padding-top: 20px;">
+						<button class="btn btn-secondary text">Send</button>
+					</div>
+					<div class="col-md-2" style="padding-top: 20px;">
+						<button class="btn btn-secondary text" type="reset" value="reset">Cancel</button>
+					</div>
+				</div>
+			</form>
+			</div>
+			</div>
+		</div>
+	<!-- end of body -->
+
+
+	<!-- start of footer -->
+	<div class="container-fluid" style="background-color: gray;">
+		<div class="row" style="padding-top: 30px;">
+			<div class="col-md-2"></div>
+			<div class="col-md-1">
+				<a href="index.html">
+					<img src="images/logo1.jpg" width="80px" height="80px" class="logo">
+				</a>
+			</div>
+			<div class="col-md-5"></div>
+			<div class="col-md-2">
+				<a href="www.faccebook.com">
+					<i class="fa fa-facebook social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.twitter.com">
+					<i class="fa fa-twitter social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.instagram.com">
+					<i class="fa fa-instagram social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.google.com">
+					<i class="fa fa-google social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.youtube.com">
+					<i class="fa fa-youtube social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-1">
+				<div class="bucket">
+					<ul class="link-list">
+						<li class="link-list__item">
+							<a href="index.html"><font class="text">Home</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="service.html"><font class="text">Service</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="chef.html"><font class="text">Chef</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="menu.html"><font class="text">Menu</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="gallery.html"><font class="text">Gallery</font></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="bucket">
+					<ul class="link-list">
+						<li class="link-list__item" style="padding-top: 20px;">
+							<a href="promotion.html"><font class="text">Promotion</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="about.html"><font class="text">About Us</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="contact.html"><font class="text">Contact Us</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="faq.html"><font class="text">FAQ</font></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2" style="padding-top: 30px;">
+				<font class="text">Your Email Address:</font>
+				<br><br><br>
+				<font class="text">Your Feedback:</font>
+			</div>
+			<div class="col-md-3" style="padding-top: 30px;">
+				<div class="form-group">
+						  <input type="email" class="form-control text" id="usr" placeholder="Email">
+				</div>
+				<br>
+				<div class="form-group">
+					<textarea class="form-control text" rows="5" id="comment" placeholder="Give feedback to us"></textarea>
+				</div> 
+				<button class="btn btn-primary">Send</button>
+			</div>
+			<div class="col-md-3">
+				<center>
+					<div class="bucket">
+					<ul class="link-list">
+						<li class="link-list__item">
+							<a href="login.html"><font class="text" style="font-size: 20px;">Login & Register</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="term.html"><font class="text" style="font-size: 20px;">Term & Condition</font></a>
+						</li>
+					</ul>
+				</div>
+				</center>
+			</div>
+		</div>
+		<div class="row" style="padding-top: 20px;">
+			<div class="col-md-2"></div>
+			<div class="col-md-3">
+				<font class="text">Our Contact:</font>
+				<br><br>
+				<font class="text">Our Email:</font>
+				<br><br>
+				<font class="text">Our Main Restaurant's Location:</font>
+			</div>
+			<div class="col-md-7">
+				<font class="text">0978088866, 09780888877</font>
+				<br><br>
+				<font class="text">www.hotpotsity@gmail.com</font>
+				<br><br>
+				<font class="text">No(71/A),Corner of Thit Taw street and Min Ye' Kyaw Swar street, Ahlone Township, Yangon</font>
+			</div>
+		</div>
+		<div class="row" style="padding-top: 20px;">
+			<div class="col-md-12">
+				<center class="text">Designed and Maintained By Chaw Thiri Soe, Info Tech Software House</center>
+			</div>
+		</div>
+	</div>
+	<!-- start of footer -->
+
+</body>
+</html>

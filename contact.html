@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HotPot City</title>
+	<link rel="ico" type="image/ico" href="images/logo.jpg">
+
+	<!-- Essential Script and Link -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- Essential Scrip and link -->
+
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<!-- Style -->
+
+	<!-- icon link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- icon link -->
+
+	<!-- NAV bar -->
+	<link rel="stylesheet" type="text/css" href="CSS/navbar.css">
+	<!-- NAV bar -->
+
+	<!-- quick link -->
+	<link rel="stylesheet" type="text/css" href="CSS/quicklink.css">
+	<!-- quick link -->
+
+	<script type="text/javascript">
+
+		function validate(){
+		var x=document.myform.email.value;
+		var ph=document.myform.phone.value;
+		var name=document.myform.name.value;
+		var status=false;  
+		var atposition=x.indexOf("@");  
+		var dotposition=x.lastIndexOf(".");
+
+
+		if(name.length<1){  
+		document.getElementById("nameerr").innerHTML="Please enter your name!!";  
+		status=false;  
+		}
+		else if(!isNaN(name))
+		{
+		document.getElementById("nameerr").innerHTML="Name must be character!!";  
+		status=false;  			
+		}
+		else{
+			status=true;
+		}
+
+
+		if(x.length==0)
+		{
+			 document.getElementById("emailerr").innerHTML="Email must be required!!";
+		  status=false;
+		}
+		else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+		  document.getElementById("emailerr").innerHTML="Email format is invalid!!";
+		  status=false;
+		}else{
+		status=true;  
+		  }
+
+
+		if(ph.length==0)
+		{
+			 document.getElementById("phoneerr").innerHTML="Phone number must be required!!";
+		  status=false;
+		}
+
+		else if(ph.length<6 || ph.length>11)
+		{
+			 document.getElementById("phoneerr").innerHTML="Password must be at least 11 number long!!";
+		  status=false;
+		}
+
+		else{
+		  status=true; 
+		  }
+		  return status;  
+		}
+	</script>
+
+
+</head>
+<body>
+	<!-- start of header -->
+	<div class="container-fluid">
+		<!-- Header -->
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-5">
+				<a href="index.html">
+					<img src="images/logo1.jpg" width="80px" height="80px" class="logo">
+				</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="www.faccebook.com">
+					<i class="fa fa-facebook social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.twitter.com">
+					<i class="fa fa-twitter social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.instagram.com">
+					<i class="fa fa-instagram social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.google.com">
+					<i class="fa fa-google social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.youtube.com">
+					<i class="fa fa-youtube social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-4">
+				<div class="input-group" style="padding-top: 25px;">
+                	<input class="form-control border-info py-2" type="search" placeholder="Search">
+                	<div class="input-group-append">
+                    	<button class="btn btn-outline-info" type="button">
+                        	<i class="fa fa-search"></i>
+                    	</button>
+                	</div>
+            	</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<!-- Header -->
+
+		<!-- NAV -->
+		<div class="row">
+			<div class="col-md-12">
+				<nav>
+        			<ul>
+            			<li><a href="index.html">Home</a></li>
+            			<li><a href="service.html">Service</a>
+            				<ul>
+                				<li><a href="reservation.html">Reservation</a></li>
+                				<li><a href="order.html">Order</a></li>
+            				</ul>        
+            			</li>
+            			<li><a href="chef.html">Chef</a>
+            			<li><a href="menu.html">Menu</a>
+            				<ul>
+                				<li><a href="soup.html">Soup</a></li>
+                				<li><a href="seafood.html">Seafood</a></li>
+                				<li><a href="meat.html">Meat</a></li>
+								<li><a href="vegetable.html">Vegetable</a></li>
+								<li><a href="grill.html">Grill</a></li>
+								<li><a href="sauce.html">Sauce</a></li>
+								<li><a href="ramen.html">Ramen</a></li>
+								<li><a href="drink.html">Drink</a></li>
+            				</ul>
+            			</li>
+            			<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="promotion.html">Promotion</a>
+							<ul>
+								<li><a href="today.html">Today Special</a></li>
+								<li><a href="event.html">Special Event</a></li>
+								<li><a href="discount.html">Special Discount</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+       				 </ul>
+    			</nav>
+			</div>
+		</div>
+		<!-- NAV -->
+
+	</div>
+	<!-- end of header -->
+
+
+	<!-- start of body -->
+	<div class="container-fluid" style="padding-bottom: 20px;">
+		<div class="row" style="padding-top: 20px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-4">
+				<div class="row" style="padding-top: 50px;">
+					<div class="col-md-1"></div>
+					<div class="col-md-11">
+						<h3>
+							Our Address
+						</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text">
+							&#149; No(33),Kyaik Wine Pagoda Road, Yangon
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text">
+							&#149; No(71/A),Corner of Thit Taw street and Min Ye' Kyaw Swar street, Alone Township, Yangon
+						</p>
+					</div>
+				</div>
+				<div class="row" style="padding-top: 50px;">
+					<div class="col-md-1"></div>
+					<div class="col-md-11">
+						<h3>
+							Time Open
+						</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text">
+							&#164; MONDAY ~~~~~~~~~ 10 AM -  1 AM<br><br>
+							&#164; TUESDAY ~~~~~~~~~~ 11 AM -  1 AM<br><br>
+							&#164; WEDNESDAY ~~~~~~ 11 AM -  1 AM<br><br>
+							&#164; THURSDAY ~~~~~~~~ 11 AM -  1 AM<br><br>
+							&#164; FRIDAY ~~~~~~~~~~~ 11 AM -  1 AM<br><br>
+							&#164; SATURDAY ~~~~~~~~  9 AM - 10 PM<br><br>
+							&#164; SUNDAY ~~~~~~~~~~  9 AM - 10 PM
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=No(71%2FA)%2CCorner%20of%20Thit%20Taw%20street%20and%20Min%20Ye'%20Kyaw%20Swar%20street%2C%20Alone%20Township%2C%20Yangon+(Hot%20Pot%20City)&amp;ie=UTF8&amp;t=h&amp;z=20&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Google map generator</a></iframe></div><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6" style="border: 1px solid gray;">
+				<div class="row">
+					<div class="col-md-12">
+						<center>
+							<h3>
+								Please Feedback Us
+							</h3>
+						</center>
+					</div>
+				</div>
+				<form name="myform" action="" onsubmit="return validate()" method="post">
+				<div class="row" style="padding-top: 20px;">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<font class="text">
+							Name:
+						</font>
+					</div>
+					<div class="col-md-5">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control text" id="name">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<span id="nameerr" style="color:red;"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row" style="padding-top: 20px;">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<font class="text">
+							Email:
+						</font>
+					</div>
+					<div class="col-md-5">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="type" class="form-control text" id="email">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<span id="emailerr" style="color:red;"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row" style="padding-top: 20px;">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<font class="text">
+							Phone:
+						</font>
+					</div>
+					<div class="col-md-5">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control text" id="phone">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<span id="phoneerr" style="color:red;"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row" style="padding-top: 20px;">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<font class="text">
+							Comments:
+						</font>
+					</div>
+					<div class="col-md-5">
+						<textarea class="form-control text" rows="5" id="comment" placeholder="Please give your feedback"></textarea>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row" style="padding-bottom: 20px;">
+					<div class="col-md-8"></div>
+					<div class="col-md-2" style="padding-top: 20px;">
+						<button class="btn btn-secondary text">Send</button>
+					</div>
+					<div class="col-md-2" style="padding-top: 20px;">
+						<button class="btn btn-secondary text" type="reset" value="reset">Cancel</button>
+					</div>
+				</div>
+				</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+	<!-- end of body -->
+
+
+	<!-- start of footer -->
+	<div class="container-fluid" style="background-color: gray;">
+		<div class="row" style="padding-top: 30px;">
+			<div class="col-md-2"></div>
+			<div class="col-md-1">
+				<a href="index.html">
+					<img src="images/logo1.jpg" width="80px" height="80px" class="logo">
+				</a>
+			</div>
+			<div class="col-md-5"></div>
+			<div class="col-md-2">
+				<a href="www.faccebook.com">
+					<i class="fa fa-facebook social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.twitter.com">
+					<i class="fa fa-twitter social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.instagram.com">
+					<i class="fa fa-instagram social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.google.com">
+					<i class="fa fa-google social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+				<a href="www.youtube.com">
+					<i class="fa fa-youtube social" style="font-size: 30px; padding-top: 25px; padding-right: 10px;"></i>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-1">
+				<div class="bucket">
+					<ul class="link-list">
+						<li class="link-list__item">
+							<a href="index.html"><font class="text">Home</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="service.html"><font class="text">Service</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="chef.html"><font class="text">Chef</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="menu.html"><font class="text">Menu</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="gallery.html"><font class="text">Gallery</font></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="bucket">
+					<ul class="link-list">
+						<li class="link-list__item" style="padding-top: 20px;">
+							<a href="promotion.html"><font class="text">Promotion</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="about.html"><font class="text">About Us</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="contact.html"><font class="text">Contact Us</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="faq.html"><font class="text">FAQ</font></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2" style="padding-top: 30px;">
+				<font class="text">Your Email Address:</font>
+				<br><br><br>
+				<font class="text">Your Feedback:</font>
+			</div>
+			<div class="col-md-3" style="padding-top: 30px;">
+				<div class="form-group">
+						  <input type="email" class="form-control text" id="usr" placeholder="Email">
+				</div>
+				<br>
+				<div class="form-group">
+					<textarea class="form-control text" rows="5" id="comment" placeholder="Give feedback to us"></textarea>
+				</div> 
+				<button class="btn btn-primary">Send</button>
+			</div>
+			<div class="col-md-3">
+				<center>
+					<div class="bucket">
+					<ul class="link-list">
+						<li class="link-list__item">
+							<a href="login.html"><font class="text" style="font-size: 20px;">Login & Register</font></a>
+						</li>
+						<li class="link-list__item">
+							<a href="term.html"><font class="text" style="font-size: 20px;">Term & Condition</font></a>
+						</li>
+					</ul>
+				</div>
+				</center>
+			</div>
+		</div>
+		<div class="row" style="padding-top: 20px;">
+			<div class="col-md-2"></div>
+			<div class="col-md-3">
+				<font class="text">Our Contact:</font>
+				<br><br>
+				<font class="text">Our Email:</font>
+				<br><br>
+				<font class="text">Our Main Restaurant's Location:</font>
+			</div>
+			<div class="col-md-7">
+				<font class="text">0978088866, 09780888877</font>
+				<br><br>
+				<font class="text">www.hotpotsity@gmail.com</font>
+				<br><br>
+				<font class="text">No(71/A),Corner of Thit Taw street and Min Ye' Kyaw Swar street, Ahlone Township, Yangon</font>
+			</div>
+		</div>
+		<div class="row" style="padding-top: 20px;">
+			<div class="col-md-12">
+				<center class="text">Designed and Maintained By Chaw Thiri Soe, Info Tech Software House</center>
+			</div>
+		</div>
+	</div>
+	<!-- start of footer -->
+
+</body>
+</html>

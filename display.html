@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="ico" type="image/ico" href="images/logo.jpg">
+
+	<!-- Essential Script and Link -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- Essential Scrip and link -->
+
+
+
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<!-- Style -->
+
+	<!-- icon link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- icon link -->
+
+	<!-- NAV bar -->
+	<link rel="stylesheet" type="text/css" href="CSS/navbar.css">
+	<!-- NAV bar -->
+
+	<!-- quick link -->
+	<link rel="stylesheet" type="text/css" href="CSS/quicklink.css">
+	<!-- quick link -->
+</head>
+<body>
+	<!-- start of header -->
+	
+	<!-- end of header -->
+
+
+	<!-- start of body -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 align="center">Shopping Cart</h3>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<table class="table table-striped text">
+					<tr>
+						<td>Name</td>
+						<td>Price</td>
+						<td>Qty</td>
+						<td>Sub Total</td>
+						<td>Update</td>
+						<td>Delete</td>
+					</tr>
+						<script type="text/javascript"> 
+								var re=localStorage.getItem("cart");
+										var mo=JSON.parse(re);
+										var arraylength=mo.length;
+										var total=0;
+										for(var i=0;i<arraylength;i++)
+										{
+											document.write("<tr>");
+											for(var j=1;j<5;j++)
+											{
+												document.write("<td>");
+												document.write(mo[i][j]);
+												document.write("</td>");
+											}
+											total+=mo[i][4];
+											document.write("<td><a href='update.html' class='btn btn-secondary'>Update</a></td>");
+											document.write("<td><a href='delete.html' class='btn btn-secondary'>Delete</a></td>");
+											document.write("</tr>");
+										}
+						</script>
+					<tr>
+						<td colspan="3">Total</td>
+						<td char="2">
+							<script type="text/javascript">
+								document.write(total);
+							</script>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row" style="margin-top: 30px;">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<a href="menu.html" class="btn aa">Continue Shopping</a>
+			</div>
+			<div class="col-md-4">
+				<a href="checkout.html" class="btn aa">Go To Check</a>
+			</div>
+		</div>
+	</div>
+	<!-- end of body -->
+
+
+	<!-- start of footer -->
+	
+	<!-- end of footer -->
+
+</body>
+</html>
